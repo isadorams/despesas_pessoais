@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 
 AppBar getPessoalAppBar() {
   return AppBar(
-    title: Text("Contas pessoais"),
+    leadingWidth: 40,
+    title: Text("Contas pessoais",
+        style: TextStyle(fontSize: 28, color: Colors.white)),
+    toolbarHeight: 80,
     centerTitle: true,
-    backgroundColor: Color(0xff0A6092),
+    backgroundColor: Colors.red[700],
     actions: [
       IconButton(
         icon: Icon(
           Icons.more_vert_rounded, //3 pontos canto direito
-          color: Colors.white,
+          color: Colors.black,
         ),
         onPressed: () {}, //aparece que esta sendo pressionado
       ),

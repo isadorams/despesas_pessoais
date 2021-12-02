@@ -6,7 +6,7 @@ Drawer getDrawer() {
       padding: EdgeInsets.zero,
       children: [
         UserAccountsDrawerHeader(
-          decoration: BoxDecoration(color: Color(0xff0A6D92)), //caixa
+          decoration: BoxDecoration(color: Colors.red[700]), //caixa
           accountName: Text("Matheus"),
           accountEmail: Text("matheus@gmail"),
           currentAccountPicture: CircleAvatar(
