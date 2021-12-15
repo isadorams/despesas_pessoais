@@ -1,12 +1,15 @@
-import 'package:controle_gastos/Helper/usuario_helpers.dart';
+import 'package:controle_gastos/Helper/Usuario.dart';
+import 'package:controle_gastos/Home/Login_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:controle_gastos/Helper/Usuario.dart';
 //import 'dart:convert';
 //import 'package:path_provider/path_provider.dart';
 
 class CadastroPage extends StatefulWidget {
   final Usuario usuario;
   CadastroPage({this.usuario});
+  List _toDoList = [];
 
   @override
   _CadastroPageState createState() => _CadastroPageState();
@@ -38,6 +41,24 @@ class _CadastroPageState extends State<CadastroPage> {
       _emailController.text = _editedUsuario.email;
       _loginController.text = _editedUsuario.login;
       _senhaController.text = _editedUsuario.senha;
+    }
+  }
+
+  @override
+  void _showCadastroPage({Usuario usuario}) async {
+    final recCadastro = await Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => CadastroPage(
+                  usuario: usuario,
+                )));
+    if (recCadastro != null) {
+      if (usuario != null) {
+        await UsuarioHelper().updateUsuario(recCadastro);
+      } else {
+        await UsuarioHelper().salvarUsuario(recCadastro);
+      }
+      UsuarioHelper().getAllUsuario();
     }
   }
 
@@ -242,7 +263,6 @@ class _CadastroPageState extends State<CadastroPage> {
               onPressed: () {
                 if (_editedUsuario.nome != null &&
                     _editedUsuario.nome.isNotEmpty) {
-                  print('Salvou');
                 } else {
                   FocusScope.of(context).requestFocus(_nomeFocus);
                 }

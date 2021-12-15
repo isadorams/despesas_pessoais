@@ -1,10 +1,11 @@
-import 'package:controle_gastos/Home/login_page.dart';
-import 'package:controle_gastos/Home/cadastro_page.dart';
-import 'package:controle_gastos/Home/home_page.dart';
+import 'package:controle_gastos/Home/Login_page.dart';
+import 'package:controle_gastos/Home/Cadastro_page.dart';
+import 'package:controle_gastos/Home/Home_page.dart';
 //import 'package:controle_gastos/Home/opcao_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
+
 void main() {
   runApp(MyApp());
 }

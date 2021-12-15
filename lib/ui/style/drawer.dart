@@ -6,7 +6,8 @@ Drawer getDrawer() {
       padding: EdgeInsets.zero,
       children: [
         UserAccountsDrawerHeader(
-          decoration: BoxDecoration(color: Colors.red[700]), //caixa
+          decoration: BoxDecoration(color: Colors.black), //caixa
+
           accountName: Text("Matheus"),
           accountEmail: Text("matheus@gmail"),
           currentAccountPicture: CircleAvatar(
@@ -29,7 +30,7 @@ Drawer getDrawer() {
         ListTile(
           leading: Icon(
             Icons.arrow_back_sharp,
-            color: Colors.black,
+            color: Colors.grey,
           ),
           title: Text(
             "Sair",

@@ -1,316 +1,375 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/flutter/src/cupertino/button.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__flutter__src__cupertino__text_selection_toolbar_button_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__flutter__src__cupertino__text_theme$46dart, packages__flutter__src__cupertino__button$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__edge_insets$46dart) {
+define(['dart_sdk', 'packages/sqflite_common/src/exception.dart'], (function load__packages__sqflite_common__src__collection_utils_dart(dart_sdk, packages__sqflite_common__src__exception$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
+  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const text$ = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
-  const colors = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__colors;
-  const button = packages__flutter__src__cupertino__button$46dart.src__cupertino__button;
-  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  var text_selection_toolbar_button = Object.create(dart.library);
+  const exception = packages__sqflite_common__src__exception$46dart.src__exception;
+  var collection_utils = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $cast = dartx.cast;
+  var $length = dartx.length;
+  var $_set = dartx._set;
+  var $toSet = dartx.toSet;
+  var $toList = dartx.toList;
+  var $clear = dartx.clear;
+  var $keys = dartx.keys;
+  var $remove = dartx.remove;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    IdentityMapOfString$int: () => (T.IdentityMapOfString$int = dart.constFn(_js_helper.IdentityMap$(core.String, core.int)))(),
+    MapOfString$ObjectN: () => (T.MapOfString$ObjectN = dart.constFn(core.Map$(core.String, T.ObjectN())))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    ListN: () => (T.ListN = dart.constFn(dart.nullable(core.List)))(),
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    MapN: () => (T.MapN = dart.constFn(dart.nullable(core.Map)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "data",
-        [_Location_column]: 10,
-        [_Location_line]: 40,
-        [_Location_file]: null
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "overflow",
-        [_Location_column]: 10,
-        [_Location_line]: 41,
-        [_Location_file]: null
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "style",
-        [_Location_column]: 10,
-        [_Location_line]: 42,
-        [_Location_file]: null
-      });
-    },
-    get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], T._LocationL());
-    },
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 39,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/text_selection_toolbar_button.dart"
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "borderRadius",
-        [_Location_column]: 7,
-        [_Location_line]: 63,
-        [_Location_file]: null
-      });
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "color",
-        [_Location_column]: 7,
-        [_Location_line]: 64,
-        [_Location_file]: null
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "disabledColor",
-        [_Location_column]: 7,
-        [_Location_line]: 65,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "onPressed",
-        [_Location_column]: 7,
-        [_Location_line]: 66,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
-        [_Location_column]: 7,
-        [_Location_line]: 67,
-        [_Location_file]: null
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "pressedOpacity",
-        [_Location_column]: 7,
-        [_Location_line]: 68,
-        [_Location_file]: null
-      });
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 69,
-        [_Location_file]: null
-      });
-    },
-    get C6() {
-      return C[6] = dart.constList([C[7] || CT.C7, C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13], T._LocationL());
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[6] || CT.C6,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 62,
-        [_Location_file]: "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/text_selection_toolbar_button.dart"
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: ui.FontWeight.prototype,
-        [FontWeight_index]: 3
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: text_style.TextStyle.prototype,
-        [TextStyle_fontFeatures]: null,
-        [TextStyle_shadows]: null,
-        [TextStyle_debugLabel]: null,
-        [TextStyle_decorationThickness]: null,
-        [TextStyle_decorationStyle]: null,
-        [TextStyle_decorationColor]: null,
-        [TextStyle_decoration]: null,
-        [TextStyle_background]: null,
-        [TextStyle_foreground]: null,
-        [TextStyle_locale]: null,
-        [TextStyle_leadingDistribution]: null,
-        [TextStyle_height]: null,
-        [TextStyle_textBaseline]: null,
-        [TextStyle_wordSpacing]: null,
-        [TextStyle_letterSpacing]: -0.15,
-        [TextStyle_fontStyle]: null,
-        [TextStyle_fontWeight]: C[15] || CT.C15,
-        [TextStyle_fontSize]: 14,
-        [TextStyle__package]: null,
-        [TextStyle__fontFamilyFallback]: null,
-        [TextStyle_fontFamily]: null,
-        [TextStyle_backgroundColor]: null,
-        [TextStyle_color]: null,
-        [TextStyle_inherit]: false
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 3944751136.0
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 16,
-        [EdgeInsets_right]: 18,
-        [EdgeInsets_top]: 16,
-        [EdgeInsets_left]: 18
-      });
-    }
-  }, false);
-  var C = Array(18).fill(void 0);
   var I = [
-    "file:///C:/src/flutter/packages/flutter/lib/src/cupertino/text_selection_toolbar_button.dart",
-    "package:flutter/src/cupertino/text_selection_toolbar_button.dart"
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.1+1/lib/src/collection_utils.dart",
+    "package:sqflite_common/src/collection_utils.dart"
   ];
-  var child$ = dart.privateName(text_selection_toolbar_button, "CupertinoTextSelectionToolbarButton.child");
-  var onPressed$ = dart.privateName(text_selection_toolbar_button, "CupertinoTextSelectionToolbarButton.onPressed");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  text_selection_toolbar_button.CupertinoTextSelectionToolbarButton = class CupertinoTextSelectionToolbarButton extends framework.StatelessWidget {
-    get child() {
-      return this[child$];
+  var _list = dart.privateName(collection_utils, "_list");
+  const _is_PluginList_default = Symbol('_is_PluginList_default');
+  collection_utils.PluginList$ = dart.generic(T => {
+    class PluginList extends collection.ListBase$(T) {
+      get rawList() {
+        return this[_list];
+      }
+      rawElementAt(index) {
+        if (index == null) dart.nullFailed(I[0], 195, 28, "index");
+        return this[_list][$_get](index);
+      }
+      get length() {
+        return this[_list][$length];
+      }
+      set length(newLength) {
+        if (newLength == null) dart.nullFailed(I[0], 201, 18, "newLength");
+        dart.throw(new core.UnsupportedError.new("read-only"));
+      }
+      _set(index, value$) {
+        let value = value$;
+        if (index == null) dart.nullFailed(I[0], 206, 25, "index");
+        T.as(value);
+        dart.throw(new core.UnsupportedError.new("read-only"));
+        return value$;
+      }
     }
-    set child(value) {
-      super.child = value;
-    }
-    get onPressed() {
-      return this[onPressed$];
-    }
-    set onPressed(value) {
-      super.onPressed = value;
-    }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 61, 29, "context");
-      return new button.CupertinoButton.new({borderRadius: null, color: text_selection_toolbar_button._kToolbarBackgroundColor, disabledColor: text_selection_toolbar_button._kToolbarBackgroundColor, onPressed: this.onPressed, padding: text_selection_toolbar_button._kToolbarButtonPadding, pressedOpacity: this.onPressed == null ? 1.0 : 0.7, child: this.child, $creationLocationd_0dea112b090073317d4: C[5] || CT.C5});
+    (PluginList.from = function(list) {
+      if (list == null) dart.nullFailed(I[0], 187, 33, "list");
+      this[_list] = list;
+      ;
+    }).prototype = PluginList.prototype;
+    dart.addTypeTests(PluginList);
+    PluginList.prototype[_is_PluginList_default] = true;
+    dart.addTypeCaches(PluginList);
+    dart.setMethodSignature(PluginList, () => ({
+      __proto__: dart.getMethods(PluginList.__proto__),
+      rawElementAt: dart.fnType(dart.dynamic, [core.int]),
+      _set: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
+      [$_set]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)])
+    }));
+    dart.setGetterSignature(PluginList, () => ({
+      __proto__: dart.getGetters(PluginList.__proto__),
+      rawList: core.List,
+      length: core.int,
+      [$length]: core.int
+    }));
+    dart.setSetterSignature(PluginList, () => ({
+      __proto__: dart.getSetters(PluginList.__proto__),
+      length: core.int,
+      [$length]: core.int
+    }));
+    dart.setLibraryUri(PluginList, I[1]);
+    dart.setFieldSignature(PluginList, () => ({
+      __proto__: dart.getFields(PluginList.__proto__),
+      [_list]: dart.finalFieldType(core.List)
+    }));
+    dart.defineExtensionMethods(PluginList, ['_set']);
+    dart.defineExtensionAccessors(PluginList, ['length']);
+    return PluginList;
+  });
+  collection_utils.PluginList = collection_utils.PluginList$();
+  dart.addTypeTests(collection_utils.PluginList, _is_PluginList_default);
+  collection_utils.Rows = class Rows extends collection_utils.PluginList$(core.Map$(core.String, dart.nullable(core.Object))) {
+    _get(index) {
+      if (index == null) dart.nullFailed(I[0], 15, 40, "index");
+      let item = core.Map.as(this.rawList[$_get](index));
+      return item[$cast](core.String, T.ObjectN());
     }
   };
-  (text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let onPressed = opts && 'onPressed' in opts ? opts.onPressed : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    if (child == null) dart.nullFailed(I[0], 30, 19, "child");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[onPressed$] = onPressed;
-    this[child$] = child;
-    text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (collection_utils.Rows.from = function(list) {
+    if (list == null) dart.nullFailed(I[0], 12, 27, "list");
+    collection_utils.Rows.__proto__.from.call(this, list);
     ;
-  }).prototype = text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.prototype;
-  (text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.text = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let onPressed = opts && 'onPressed' in opts ? opts.onPressed : null;
-    let text = opts && 'text' in opts ? opts.text : null;
-    if (text == null) dart.nullFailed(I[0], 38, 21, "text");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[onPressed$] = onPressed;
-    this[child$] = new text$.Text.new(text, {overflow: paragraph.TextOverflow.ellipsis, style: text_selection_toolbar_button._kToolbarButtonFontStyle.copyWith({color: onPressed != null ? colors.CupertinoColors.white : colors.CupertinoColors.inactiveGray}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
-    text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.prototype;
-  dart.addTypeTests(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton);
-  dart.addTypeCaches(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton);
-  dart.setMethodSignature(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton, () => ({
-    __proto__: dart.getMethods(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = collection_utils.Rows.prototype;
+  dart.addTypeTests(collection_utils.Rows);
+  dart.addTypeCaches(collection_utils.Rows);
+  dart.setMethodSignature(collection_utils.Rows, () => ({
+    __proto__: dart.getMethods(collection_utils.Rows.__proto__),
+    _get: dart.fnType(core.Map$(core.String, dart.nullable(core.Object)), [core.int]),
+    [$_get]: dart.fnType(core.Map$(core.String, dart.nullable(core.Object)), [core.int])
   }));
-  dart.setLibraryUri(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton, I[1]);
-  dart.setFieldSignature(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton, () => ({
-    __proto__: dart.getFields(text_selection_toolbar_button.CupertinoTextSelectionToolbarButton.__proto__),
-    child: dart.finalFieldType(framework.Widget),
-    onPressed: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [])))
-  }));
-  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
-  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
-  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
-  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
-  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
-  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
-  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
-  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
-  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
-  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
-  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
-  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
-  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
-  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
-  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
-  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
-  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
-  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
-  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
-  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
-  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
-  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
-  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
-  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
-  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
-  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
-  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  dart.defineLazy(text_selection_toolbar_button, {
-    /*text_selection_toolbar_button._kToolbarButtonFontStyle*/get _kToolbarButtonFontStyle() {
-      return C[14] || CT.C14;
-    },
-    /*text_selection_toolbar_button._kToolbarBackgroundColor*/get _kToolbarBackgroundColor() {
-      return C[16] || CT.C16;
-    },
-    /*text_selection_toolbar_button._kToolbarButtonPadding*/get _kToolbarButtonPadding() {
-      return C[17] || CT.C17;
+  dart.setLibraryUri(collection_utils.Rows, I[1]);
+  dart.defineExtensionMethods(collection_utils.Rows, ['_get']);
+  var _rows = dart.privateName(collection_utils, "_rows");
+  var _columns = dart.privateName(collection_utils, "_columns");
+  var _keys = dart.privateName(collection_utils, "_keys");
+  var __QueryResultSet__columnIndexMap = dart.privateName(collection_utils, "_#QueryResultSet#_columnIndexMap");
+  var __QueryResultSet__columnIndexMap_isSet = dart.privateName(collection_utils, "_#QueryResultSet#_columnIndexMap#isSet");
+  var _columnIndexMap = dart.privateName(collection_utils, "_columnIndexMap");
+  collection_utils.QueryResultSet = class QueryResultSet extends collection.ListBase$(core.Map$(core.String, dart.nullable(core.Object))) {
+    get [_columnIndexMap]() {
+      let t0;
+      return dart.test(this[__QueryResultSet__columnIndexMap_isSet]) ? (t0 = this[__QueryResultSet__columnIndexMap], t0) : dart.throw(new _internal.LateError.fieldNI("_columnIndexMap"));
     }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/cupertino/text_selection_toolbar_button.dart", {
-    "package:flutter/src/cupertino/text_selection_toolbar_button.dart": text_selection_toolbar_button
+    set [_columnIndexMap](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 92, 25, "null");
+      this[__QueryResultSet__columnIndexMap_isSet] = true;
+      this[__QueryResultSet__columnIndexMap] = t0;
+    }
+    get length() {
+      let t1, t1$;
+      t1$ = (t1 = this[_rows], t1 == null ? null : t1[$length]);
+      return t1$ == null ? 0 : t1$;
+    }
+    _get(index) {
+      if (index == null) dart.nullFailed(I[0], 98, 40, "index");
+      return new collection_utils.QueryRow.new(this, dart.nullCheck(this[_rows])[$_get](index));
+    }
+    _set(index, value$) {
+      let value = value$;
+      if (index == null) dart.nullFailed(I[0], 103, 25, "index");
+      T.MapOfString$ObjectN().as(value);
+      if (value == null) dart.nullFailed(I[0], 103, 53, "value");
+      dart.throw(new core.UnsupportedError.new("read-only"));
+      return value$;
+    }
+    set length(newLength) {
+      if (newLength == null) dart.nullFailed(I[0], 108, 18, "newLength");
+      dart.throw(new core.UnsupportedError.new("read-only"));
+    }
+    columnIndex(name) {
+      return this[_columnIndexMap][$_get](dart.nullCheck(name));
+    }
+    get keys() {
+      let t1;
+      t1 = this[_keys];
+      return t1 == null ? this[_keys] = dart.nullCheck(this[_columns])[$toSet]()[$toList]({growable: false}) : t1;
+    }
+  };
+  (collection_utils.QueryResultSet.new = function(rawColumns, rawRows) {
+    let t0, t0$;
+    this[_rows] = null;
+    this[_columns] = null;
+    this[_keys] = null;
+    this[__QueryResultSet__columnIndexMap] = null;
+    this[__QueryResultSet__columnIndexMap_isSet] = false;
+    this[_columns] = (t0 = rawColumns, t0 == null ? null : t0[$cast](core.String));
+    this[_rows] = (t0$ = rawRows, t0$ == null ? null : t0$[$cast](core.List));
+    if (this[_columns] != null) {
+      this[_columnIndexMap] = new (T.IdentityMapOfString$int()).new();
+      for (let i = 0; i < dart.notNull(dart.nullCheck(this[_columns])[$length]); i = i + 1) {
+        this[_columnIndexMap][$_set](dart.nullCheck(this[_columns])[$_get](i), i);
+      }
+    }
+  }).prototype = collection_utils.QueryResultSet.prototype;
+  dart.addTypeTests(collection_utils.QueryResultSet);
+  dart.addTypeCaches(collection_utils.QueryResultSet);
+  dart.setMethodSignature(collection_utils.QueryResultSet, () => ({
+    __proto__: dart.getMethods(collection_utils.QueryResultSet.__proto__),
+    _get: dart.fnType(core.Map$(core.String, dart.nullable(core.Object)), [core.int]),
+    [$_get]: dart.fnType(core.Map$(core.String, dart.nullable(core.Object)), [core.int]),
+    _set: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
+    [$_set]: dart.fnType(dart.void, [core.int, dart.nullable(core.Object)]),
+    columnIndex: dart.fnType(dart.nullable(core.int), [dart.nullable(core.String)])
+  }));
+  dart.setGetterSignature(collection_utils.QueryResultSet, () => ({
+    __proto__: dart.getGetters(collection_utils.QueryResultSet.__proto__),
+    [_columnIndexMap]: core.Map$(core.String, core.int),
+    length: core.int,
+    [$length]: core.int,
+    keys: core.List$(core.String)
+  }));
+  dart.setSetterSignature(collection_utils.QueryResultSet, () => ({
+    __proto__: dart.getSetters(collection_utils.QueryResultSet.__proto__),
+    [_columnIndexMap]: core.Map$(core.String, core.int),
+    length: core.int,
+    [$length]: core.int
+  }));
+  dart.setLibraryUri(collection_utils.QueryResultSet, I[1]);
+  dart.setFieldSignature(collection_utils.QueryResultSet, () => ({
+    __proto__: dart.getFields(collection_utils.QueryResultSet.__proto__),
+    [_rows]: dart.fieldType(dart.nullable(core.List$(core.List))),
+    [_columns]: dart.fieldType(dart.nullable(core.List$(core.String))),
+    [_keys]: dart.fieldType(dart.nullable(core.List$(core.String))),
+    [__QueryResultSet__columnIndexMap]: dart.fieldType(dart.nullable(core.Map$(core.String, core.int))),
+    [__QueryResultSet__columnIndexMap_isSet]: dart.fieldType(core.bool)
+  }));
+  dart.defineExtensionMethods(collection_utils.QueryResultSet, ['_get', '_set']);
+  dart.defineExtensionAccessors(collection_utils.QueryResultSet, ['length']);
+  var queryResultSet$ = dart.privateName(collection_utils, "QueryRow.queryResultSet");
+  var row$ = dart.privateName(collection_utils, "QueryRow.row");
+  collection_utils.QueryRow = class QueryRow extends collection.MapBase$(core.String, dart.dynamic) {
+    get queryResultSet() {
+      return this[queryResultSet$];
+    }
+    set queryResultSet(value) {
+      super.queryResultSet = value;
+    }
+    get row() {
+      return this[row$];
+    }
+    set row(value) {
+      super.row = value;
+    }
+    _get(key) {
+      let stringKey = T.StringN().as(key);
+      let columnIndex = this.queryResultSet.columnIndex(stringKey);
+      if (columnIndex != null) {
+        return this.row[$_get](columnIndex);
+      }
+      return null;
+    }
+    _set(key, value$) {
+      let value = value$;
+      core.String.as(key);
+      if (key == null) dart.nullFailed(I[0], 143, 28, "key");
+      dart.throw(new core.UnsupportedError.new("read-only"));
+      return value$;
+    }
+    clear() {
+      dart.throw(new core.UnsupportedError.new("read-only"));
+    }
+    get keys() {
+      return this.queryResultSet.keys;
+    }
+    remove(key) {
+      dart.throw(new core.UnsupportedError.new("read-only"));
+    }
+  };
+  (collection_utils.QueryRow.new = function(queryResultSet, row) {
+    if (queryResultSet == null) dart.nullFailed(I[0], 124, 17, "queryResultSet");
+    if (row == null) dart.nullFailed(I[0], 124, 38, "row");
+    this[queryResultSet$] = queryResultSet;
+    this[row$] = row;
+    ;
+  }).prototype = collection_utils.QueryRow.prototype;
+  dart.addTypeTests(collection_utils.QueryRow);
+  dart.addTypeCaches(collection_utils.QueryRow);
+  dart.setMethodSignature(collection_utils.QueryRow, () => ({
+    __proto__: dart.getMethods(collection_utils.QueryRow.__proto__),
+    _get: dart.fnType(dart.dynamic, [dart.nullable(core.Object)]),
+    [$_get]: dart.fnType(dart.dynamic, [dart.nullable(core.Object)]),
+    _set: dart.fnType(dart.void, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+    [$_set]: dart.fnType(dart.void, [dart.nullable(core.Object), dart.nullable(core.Object)]),
+    clear: dart.fnType(dart.void, []),
+    [$clear]: dart.fnType(dart.void, []),
+    remove: dart.fnType(dart.dynamic, [dart.nullable(core.Object)]),
+    [$remove]: dart.fnType(dart.dynamic, [dart.nullable(core.Object)])
+  }));
+  dart.setGetterSignature(collection_utils.QueryRow, () => ({
+    __proto__: dart.getGetters(collection_utils.QueryRow.__proto__),
+    keys: core.Iterable$(core.String),
+    [$keys]: core.Iterable$(core.String)
+  }));
+  dart.setLibraryUri(collection_utils.QueryRow, I[1]);
+  dart.setFieldSignature(collection_utils.QueryRow, () => ({
+    __proto__: dart.getFields(collection_utils.QueryRow.__proto__),
+    queryResultSet: dart.finalFieldType(collection_utils.QueryResultSet),
+    row: dart.finalFieldType(core.List)
+  }));
+  dart.defineExtensionMethods(collection_utils.QueryRow, ['_get', '_set', 'clear', 'remove']);
+  dart.defineExtensionAccessors(collection_utils.QueryRow, ['keys']);
+  var result$ = dart.privateName(collection_utils, "BatchResult.result");
+  collection_utils.BatchResult = class BatchResult extends core.Object {
+    get result() {
+      return this[result$];
+    }
+    set result(value) {
+      super.result = value;
+    }
+  };
+  (collection_utils.BatchResult.new = function(result) {
+    this[result$] = result;
+    ;
+  }).prototype = collection_utils.BatchResult.prototype;
+  dart.addTypeTests(collection_utils.BatchResult);
+  dart.addTypeCaches(collection_utils.BatchResult);
+  dart.setLibraryUri(collection_utils.BatchResult, I[1]);
+  dart.setFieldSignature(collection_utils.BatchResult, () => ({
+    __proto__: dart.getFields(collection_utils.BatchResult.__proto__),
+    result: dart.finalFieldType(dart.dynamic)
+  }));
+  collection_utils.BatchResults = class BatchResults extends collection_utils.PluginList {
+    _get(index) {
+      if (index == null) dart.nullFailed(I[0], 176, 27, "index");
+      let rawMap = core.Map.as(this[_list][$_get](index));
+      return collection_utils.fromRawOperationResult(rawMap);
+    }
+  };
+  (collection_utils.BatchResults.from = function(list) {
+    if (list == null) dart.nullFailed(I[0], 173, 35, "list");
+    collection_utils.BatchResults.__proto__.from.call(this, list);
+    ;
+  }).prototype = collection_utils.BatchResults.prototype;
+  dart.addTypeTests(collection_utils.BatchResults);
+  dart.addTypeCaches(collection_utils.BatchResults);
+  dart.setMethodSignature(collection_utils.BatchResults, () => ({
+    __proto__: dart.getMethods(collection_utils.BatchResults.__proto__),
+    _get: dart.fnType(dart.dynamic, [core.int]),
+    [$_get]: dart.fnType(dart.dynamic, [core.int])
+  }));
+  dart.setLibraryUri(collection_utils.BatchResults, I[1]);
+  dart.defineExtensionMethods(collection_utils.BatchResults, ['_get']);
+  collection_utils.queryResultSetFromMap = function queryResultSetFromMap(queryResultSetMap) {
+    if (queryResultSetMap == null) dart.nullFailed(I[0], 22, 60, "queryResultSetMap");
+    let columns = T.ListN().as(queryResultSetMap[$_get]("columns"));
+    let rows = T.ListN().as(queryResultSetMap[$_get]("rows"));
+    return new collection_utils.QueryResultSet.new(columns, rows);
+  };
+  collection_utils.databaseExceptionFromOperationError = function databaseExceptionFromOperationError(errorMap) {
+    if (errorMap == null) dart.nullFailed(I[0], 30, 27, "errorMap");
+    let message = T.StringN().as(errorMap[$_get]("message"));
+    return new exception.SqfliteDatabaseException.new(message, errorMap[$_get]("data"), {resultCode: T.intN().as(errorMap[$_get]("resultCode"))});
+  };
+  collection_utils.fromRawOperationResult = function fromRawOperationResult(rawOperationResultMap) {
+    if (rawOperationResultMap == null) dart.nullFailed(I[0], 40, 54, "rawOperationResultMap");
+    let errorMap = T.MapN().as(rawOperationResultMap[$_get]("error"));
+    if (errorMap != null) {
+      return collection_utils.databaseExceptionFromOperationError(errorMap);
+    }
+    let successResult = rawOperationResultMap[$_get]("result");
+    if (core.Map.is(successResult)) {
+      return collection_utils.queryResultToList(successResult);
+    } else if (core.List.is(successResult)) {
+      return collection_utils.queryResultToList(successResult);
+    }
+    return successResult;
+  };
+  collection_utils.queryResultToList = function queryResultToList(queryResult) {
+    if (core.Map.is(queryResult)) {
+      return collection_utils.queryResultSetFromMap(queryResult);
+    }
+    if (core.List.is(queryResult)) {
+      let rows = new collection_utils.Rows.from(queryResult);
+      return rows;
+    }
+    dart.throw("Unsupported queryResult type " + dart.str(queryResult));
+  };
+  dart.trackLibraries("packages/sqflite_common/src/collection_utils.dart", {
+    "package:sqflite_common/src/collection_utils.dart": collection_utils
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["text_selection_toolbar_button.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAoDe;;;;;;IAKO;;;;;;;UAGM;AACxB,YAAO,+CACS,aACP,uEACQ,mEACJ,yBACF,sEACO,AAAU,yBAAU,MAAM,YACnC;IAEX;;;QA3CO;QACA;QACS;;;IADT;IACS;AACX,qGAAW,GAAG;;EAAC;;QAKb;QACA;QACW;;;IADX;IAEI,eAAE,mBACN,IAAI,aACmB,wCAChB,AAAyB,wEACvB,AAAU,SAAD,WAA2B,+BAAwB;AAGvE,qGAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MApCN,sDAAwB;;;MAS5B,sDAAwB;;;MAGnB,oDAAsB","file":"../../../../../../../packages/flutter/src/cupertino/text_selection_toolbar_button.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["collection_utils.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/sqflite_common/src/collection_utils.dart.lib.js"}');
   // Exports:
   return {
-    src__cupertino__text_selection_toolbar_button: text_selection_toolbar_button
+    src__collection_utils: collection_utils
   };
 }));
 
-//# sourceMappingURL=text_selection_toolbar_button.dart.lib.js.map
+//# sourceMappingURL=collection_utils.dart.lib.js.map

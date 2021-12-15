@@ -1,6 +1,7 @@
-import 'package:controle_gastos/ui/inicial.dart';
+import 'package:controle_gastos/ui/Empresarial/Emp_inicial.dart';
+import 'package:controle_gastos/ui/Pessoal/Pes_inicial.dart';
 import 'package:flutter/material.dart';
-import 'package:controle_gastos/Helper/usuario_helpers.dart';
+import 'package:controle_gastos/Helper/Usuario.dart';
 
 class OpcaoPage extends StatefulWidget {
   final Usuario usuario;
@@ -96,7 +97,7 @@ class _OpcaoPageState extends State<OpcaoPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => InicialPage()),
+                  MaterialPageRoute(builder: (context) => InicialPageE()),
                 );
                 //usuarioController.previousPage(
                 //duration: Duration(seconds: 1),

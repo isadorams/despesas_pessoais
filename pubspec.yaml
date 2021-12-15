@@ -23,12 +23,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_storage: ^3.1.1
+  firebase_auth: ^0.15.3
   cupertino_icons: ^1.0.2
   path_provider: ^2.0.4
   sqflite: ^2.0.0+4
   table_calendar: ^2.2.2
   intl: ^0.16.1
-
+  form_field_validator: ^1.0.1
+  shared_preferences: ^ 0.5.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -62,6 +65,7 @@ flutter:
   assets:
      - assets/imagens/moedinha.jpg
      - assets/imagens/imagem.jpg
+     - assets/imagens/moedinhaDark.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
